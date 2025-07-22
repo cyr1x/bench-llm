@@ -1,0 +1,3 @@
+
+{'date':'2025-07-20T15:25:26.450112+00:00','problem':aime2025-1-0,'result':'GOOD','response':'7','expected_response':'7','delay':'3','tokens':'57','model':'SakanaRTL'}
+{'date':'2025-07-20T23:12:53.629560+00:00','problem':aime2025-1-0,'result':'GOOD','response':'7','expected_response':'7','delay':'2','tokens':'35','model':'SakanaRTL'}
