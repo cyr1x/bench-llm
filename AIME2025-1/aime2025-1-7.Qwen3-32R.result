@@ -1,4 +1,3 @@
-
-{"date":"2025-07-21T00:39:34.356323+00:00","problem":aime2025-1-7,"result":"BAD","response":"271","expected_response":"821","delay":"789","tokens":"16731","model":"Qwen3-32R"}
-{"date":"2025-07-21T09:30:40.789439+00:00","problem":aime2025-1-7,"result":"BAD","response":"271","expected_response":"821","delay":"390","tokens":"8408","model":"Qwen3-32R"}
-{"date":"2025-07-21T12:30:59.895391+00:00","problem":aime2025-1-7,"result":"BAD","response":"271","expected_response":"821","delay":"672","tokens":"14305","model":"Qwen3-32R"}
+{"date":"2025-07-21T00:39:34.356323+00:00","problem":"aime2025-1-7","result":"BAD","response":"271","expected_response":"821","delay":"789","tokens":"16731","model":"Qwen3-32R"}
+{"date":"2025-07-21T09:30:40.789439+00:00","problem":"aime2025-1-7","result":"BAD","response":"271","expected_response":"821","delay":"390","tokens":"8408","model":"Qwen3-32R"}
+{"date":"2025-07-21T12:30:59.895391+00:00","problem":"aime2025-1-7","result":"BAD","response":"271","expected_response":"821","delay":"672","tokens":"14305","model":"Qwen3-32R"}

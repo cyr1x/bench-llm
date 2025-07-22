@@ -1,2 +1,1 @@
-
-{"date":"2025-07-20T20:55:47.804584+00:00","problem":aime2025-1-7,"result":"BAD","response":"1/6","expected_response":"821","delay":"1693","tokens":"34849","model":"Qwen3-32NR"}
+{"date":"2025-07-20T20:55:47.804584+00:00","problem":"aime2025-1-7","result":"BAD","response":"1/6","expected_response":"821","delay":"1693","tokens":"34849","model":"Qwen3-32NR"}

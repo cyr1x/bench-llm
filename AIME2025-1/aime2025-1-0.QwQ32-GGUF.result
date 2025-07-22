@@ -1,5 +1,4 @@
-
-{"date":"2025-07-21T16:31:46.390350+00:00","problem":aime2025-1-0,"result":"GOOD","response":"7","expected_response":"7","delay":"25","tokens":"486","model":"QwQ32-GGUF"}
-{"date":"2025-07-21T16:47:55.165185+00:00","problem":aime2025-1-0,"result":"GOOD","response":"7","expected_response":"7","delay":"26","tokens":"486","model":"QwQ32-GGUF"}
-{"date":"2025-07-21T16:54:58.439526+00:00","problem":aime2025-1-0,"result":"GOOD","response":"7","expected_response":"7","delay":"26","tokens":"486","model":"QwQ32-GGUF"}
-{"date":"2025-07-21T17:00:59.662812+00:00","problem":aime2025-1-0,"result":"GOOD","response":"7","expected_response":"7","delay":"18","tokens":"334","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T16:31:46.390350+00:00","problem":"aime2025-1-0","result":"GOOD","response":"7","expected_response":"7","delay":"25","tokens":"486","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T16:47:55.165185+00:00","problem":"aime2025-1-0","result":"GOOD","response":"7","expected_response":"7","delay":"26","tokens":"486","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T16:54:58.439526+00:00","problem":"aime2025-1-0","result":"GOOD","response":"7","expected_response":"7","delay":"26","tokens":"486","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T17:00:59.662812+00:00","problem":"aime2025-1-0","result":"GOOD","response":"7","expected_response":"7","delay":"18","tokens":"334","model":"QwQ32-GGUF"}

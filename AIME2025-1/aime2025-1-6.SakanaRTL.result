@@ -1,3 +1,2 @@
-
-{"date":"2025-07-20T15:32:59.768228+00:00","problem":aime2025-1-6,"result":"GOOD","response":"504","expected_response":"504","delay":"58","tokens":"1321","model":"SakanaRTL"}
-{"date":"2025-07-20T23:23:08.570744+00:00","problem":aime2025-1-6,"result":"GOOD","response":"504","expected_response":"504","delay":"52","tokens":"1176","model":"SakanaRTL"}
+{"date":"2025-07-20T15:32:59.768228+00:00","problem":"aime2025-1-6","result":"GOOD","response":"504","expected_response":"504","delay":"58","tokens":"1321","model":"SakanaRTL"}
+{"date":"2025-07-20T23:23:08.570744+00:00","problem":"aime2025-1-6","result":"GOOD","response":"504","expected_response":"504","delay":"52","tokens":"1176","model":"SakanaRTL"}
