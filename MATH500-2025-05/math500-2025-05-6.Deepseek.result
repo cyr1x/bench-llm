@@ -1,2 +1,1 @@
-
-{"date":"2025-07-22T00:22:48.345808+00:00","problem":math500-2025-05-6,"result":"GOOD","response":"13","expected_response":"13","delay":"1805","tokens":"34883","model":"Deepseek"}
+{"date":"2025-07-22T00:22:48.345808+00:00","problem":"math500-2025-05-6","result":"GOOD","response":"13","expected_response":"13","delay":"1805","tokens":"34883","model":"Deepseek"}

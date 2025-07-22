@@ -1,2 +1,1 @@
-
-{"date":"2025-07-21T22:06:22.175866+00:00","problem":math500-2025-05-25,"result":"BAD","response":"rac{1}{2}","expected_response":"1/25","delay":"83","tokens":"1657","model":"Llama33"}
+{"date":"2025-07-21T22:06:22.175866+00:00","problem":"math500-2025-05-25","result":"BAD","response":"frac{1}{2}","expected_response":"1/25","delay":"83","tokens":"1657","model":"Llama33"}

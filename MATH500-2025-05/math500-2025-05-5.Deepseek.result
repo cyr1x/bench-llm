@@ -1,3 +1,2 @@
-
-{"date":"2025-07-21T22:28:25.031150+00:00","problem":math500-2025-05-5,"result":"GOOD","response":"8","expected_response":"8","delay":"130","tokens":"2597","model":"Deepseek"}
-{"date":"2025-07-21T23:52:12.883910+00:00","problem":math500-2025-05-5,"result":"GOOD","response":"8","expected_response":"8","delay":"227","tokens":"4539","model":"Deepseek"}
+{"date":"2025-07-21T22:28:25.031150+00:00","problem":"math500-2025-05-5","result":"GOOD","response":"8","expected_response":"8","delay":"130","tokens":"2597","model":"Deepseek"}
+{"date":"2025-07-21T23:52:12.883910+00:00","problem":"math500-2025-05-5","result":"GOOD","response":"8","expected_response":"8","delay":"227","tokens":"4539","model":"Deepseek"}

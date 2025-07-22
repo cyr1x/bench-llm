@@ -1,5 +1,4 @@
-
-{'date':'2025-07-21T16:34:22.554253+00:00','problem':cyril2025-1-1,'result':'GOOD','response':'150','expected_response':'150','delay':'126','tokens':'2379','model':'QwQ32-GGUF'}
-{'date':'2025-07-21T16:50:36.976699+00:00','problem':cyril2025-1-1,'result':'GOOD','response':'150','expected_response':'150','delay':'131','tokens':'2494','model':'QwQ32-GGUF'}
-{'date':'2025-07-21T16:57:40.488942+00:00','problem':cyril2025-1-1,'result':'GOOD','response':'150','expected_response':'150','delay':'131','tokens':'2494','model':'QwQ32-GGUF'}
-{'date':'2025-07-21T17:03:41.566639+00:00','problem':cyril2025-1-1,'result':'GOOD','response':'150','expected_response':'150','delay':'131','tokens':'2494','model':'QwQ32-GGUF'}
+{"date":"2025-07-21T16:34:22.554253+00:00","problem":"cyril2025-1-1","result":"GOOD","response":"150","expected_response":"150","delay":"126","tokens":"2379","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T16:50:36.976699+00:00","problem":"cyril2025-1-1","result":"GOOD","response":"150","expected_response":"150","delay":"131","tokens":"2494","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T16:57:40.488942+00:00","problem":"cyril2025-1-1","result":"GOOD","response":"150","expected_response":"150","delay":"131","tokens":"2494","model":"QwQ32-GGUF"}
+{"date":"2025-07-21T17:03:41.566639+00:00","problem":"cyril2025-1-1","result":"GOOD","response":"150","expected_response":"150","delay":"131","tokens":"2494","model":"QwQ32-GGUF"}
