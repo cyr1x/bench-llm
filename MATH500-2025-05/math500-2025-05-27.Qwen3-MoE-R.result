@@ -1,0 +1,2 @@
+{"date": "2025-07-22T22:19:53.605097+00:00", "problem": "./MATH500-2025-05/math500-2025-05-27", "result": "GOOD", "response": "11", "expected_response": "11", "delay": "202", "tokens": "10941", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T02:24:07.309270+00:00", "problem": "./MATH500-2025-05/math500-2025-05-27", "result": "GOOD", "response": "11", "expected_response": "11", "delay": "142", "tokens": "7728", "model": "Qwen3-MoE-R"}

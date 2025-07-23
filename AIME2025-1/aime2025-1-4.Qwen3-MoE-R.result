@@ -1,0 +1,2 @@
+{"date": "2025-07-22T23:30:16.810471+00:00", "problem": "./AIME2025-1/aime2025-1-4", "result": "BAD", "response": "1", "expected_response": "117", "delay": "657", "tokens": "34924", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T00:48:54.082911+00:00", "problem": "./AIME2025-1/aime2025-1-4", "result": "GOOD", "response": "117", "expected_response": "117", "delay": "240", "tokens": "13025", "model": "Qwen3-MoE-R"}

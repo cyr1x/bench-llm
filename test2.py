@@ -14,6 +14,8 @@ models = {
 "QwQ32": {"model_name":"QwQ32","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/QwQ32/","model_key":"token-abc123","reasoning_model":True},
 "SakanaRTL":{"model_name":"SakanaRTL","model_url":"http://172.31.16.19:8003/v1","model_path":"/llm/SakanaAI-RTL-32","model_key":"token-abc123","reasoning_model":True},
 "Qwen3-32R":{"model_name":"Qwen3-32R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True},
+"Qwen3-MoE-R":{"model_name":"Qwen3-MoE-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True},
+"Qwen3-MoE-NR":{"model_name":"Qwen3-MoE-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
 "Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
 "Llama33":{"model_name":"Llama33","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Llama33-70/","model_key":"token-abc123","reasoning_model":False},
 "Deepseek":{"model_name":"Deepseek","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Deepseek-R1/","model_key":"token-abc123","reasoning_model":True},
@@ -91,7 +93,7 @@ DO NOT PUT ANYTHING ELSE IN THE RESPONSE AS THE JSON DICTIONARY WILL BE PARSED
 """
     messagechk=[{"role":"user","content":msgtochk+l_llm_solution}]
     time.sleep(15)
-    llmasajudge,toktok=call_model("Qwen3-32NR",messagechk,False)
+    llmasajudge,toktok=call_model("Qwen3-MoE-NR",messagechk,False)
     llmasajudge=llmasajudge.choices[0].message.reasoning_content
     logging.info(log_context+"llmasajudge:"+llmasajudge)
     soluce = str(json.loads(extractDict(llmasajudge))["response"])
@@ -164,36 +166,36 @@ def resolve_problem(l_model:str,l_problem:str):
     #return isgoodsoluce,soluce,expected_solution,end,tokens
 
 log_context = "-- "+test_model+" -- "
-resolve_problem(test_model,"../aime2025-1-0");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-0");
 #resolve_problem(test_model,"cyril2025-1-1");
-#resolve_problem(test_model,"aime2025-1-1");
-#resolve_problem(test_model,"aime2025-1-3");
-#resolve_problem(test_model,"aime2025-1-4");
-#resolve_problem(test_model,"aime2025-1-5");
-#resolve_problem(test_model,"aime2025-1-6");
-#resolve_problem(test_model,"aime2025-1-7");
-#resolve_problem(test_model,"aime2025-1-8");
-#resolve_problem(test_model,"aime2025-1-9");
-#resolve_problem(test_model,"aime2025-1-12");
-#resolve_problem(test_model,"aime2025-1-13");
-#resolve_problem(test_model,"aime2025-1-14");
-#resolve_problem(test_model,"aime2025-1-15");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-1");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-3");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-4");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-5");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-6");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-7");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-8");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-9");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-12");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-13");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-14");
+#resolve_problem(test_model,"./AIME2025-1/aime2025-1-15");
 
 
 #MATH500 05-2025
-#resolve_problem(test_model,"math500-2025-05-5");
-#resolve_problem(test_model,"math500-2025-05-6");
-#resolve_problem(test_model,"math500-2025-05-15");
-#resolve_problem(test_model,"math500-2025-05-16");
-#resolve_problem(test_model,"math500-2025-05-17");
-#resolve_problem(test_model,"math500-2025-05-20");
-#resolve_problem(test_model,"math500-2025-05-21");
-#resolve_problem(test_model,"math500-2025-05-25");
-#resolve_problem(test_model,"math500-2025-05-27");
-#resolve_problem(test_model,"math500-2025-05-37");
-#resolve_problem(test_model,"math500-2025-05-40");
-#resolve_problem(test_model,"math500-2025-05-43");
-#resolve_problem(test_model,"math500-2025-05-45");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-5");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-6");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-15");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-16");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-17");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-20");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-21");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-25");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-27");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-37");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-40");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-43");
+resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-45");
 
 
 #time.sleep(15)
