@@ -1,2 +1,3 @@
-{"date": "2025-07-22T21:33:44.307808+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "157", "tokens": "8539", "model": "Qwen3-MoE-R"}
-{"date": "2025-07-23T01:44:42.451917+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "150", "tokens": "8112", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T15:53:27.966067+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "123", "tokens": "6656", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T18:09:56.766947+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "134", "tokens": "7274", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T21:32:17.651212+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "106", "tokens": "5751", "model": "Qwen3-MoE-R"}

@@ -1,0 +1,4 @@
+{"date": "2025-07-25T03:14:33.961509+00:00", "problem": "./AIME2025-2/aime2025-2-13", "result": "GOOD", "response": "248", "expected_response": "248", "delay": "1412", "tokens": "30431", "model": "QwQ32"}
+{"date": "2025-07-25T10:47:55.430005+00:00", "problem": "./AIME2025-2/aime2025-2-13", "result": "BAD", "response": "208", "expected_response": "248", "delay": "1124", "tokens": "24479", "model": "QwQ32"}
+{"date": "2025-07-25T14:31:33.217227+00:00", "problem": "./AIME2025-2/aime2025-2-13", "result": "BAD", "response": "4", "expected_response": "248", "delay": "1630", "tokens": "34845", "model": "QwQ32"}
+{"date": "2025-07-25T18:04:12.775140+00:00", "problem": "./AIME2025-2/aime2025-2-13", "result": "BAD", "response": "26", "expected_response": "248", "delay": "1630", "tokens": "34845", "model": "QwQ32"}

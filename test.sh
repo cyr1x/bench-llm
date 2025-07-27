@@ -13,4 +13,6 @@ uv pip list
 python3.12 --version
 
 python test2.py $1
+python test2.py $1
+python test2.py $1
 

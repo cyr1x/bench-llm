@@ -1,3 +1,3 @@
 #!/bin/bash
-rsync -av --exclude .venv --delete . guimauve:~/test-llm/
+rsync -avcz --exclude .venv --delete guimauve:~/test-llm2/ .
 

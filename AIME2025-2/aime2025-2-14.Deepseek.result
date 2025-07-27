@@ -1,0 +1,2 @@
+{"date": "2025-07-24T07:26:32.338731+00:00", "problem": "./AIME2025-2/aime2025-2-14", "result": "GOOD", "response": "104", "expected_response": "104", "delay": "587", "tokens": "11593", "model": "Deepseek"}
+{"date": "2025-07-24T14:18:44.023511+00:00", "problem": "./AIME2025-2/aime2025-2-14", "result": "GOOD", "response": "104", "expected_response": "104", "delay": "435", "tokens": "8583", "model": "Deepseek"}

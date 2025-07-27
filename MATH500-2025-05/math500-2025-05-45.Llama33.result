@@ -1,1 +1,3 @@
-{"date":"2025-07-21T22:13:03.465789+00:00","problem":"math500-2025-05-45","result":"BAD","response":"240","expected_response":"154","delay":"39","tokens":"765","model":"Llama33"}
+{"date": "2025-07-26T22:43:53.074906+00:00", "problem": "./MATH500-2025-05/math500-2025-05-45", "result": "BAD", "response": "60", "expected_response": "154", "delay": "55", "tokens": "1103", "model": "Llama33"}
+{"date": "2025-07-26T23:32:07.947589+00:00", "problem": "./MATH500-2025-05/math500-2025-05-45", "result": "BAD", "response": "181", "expected_response": "154", "delay": "66", "tokens": "1318", "model": "Llama33"}
+{"date": "2025-07-27T00:52:04.608735+00:00", "problem": "./MATH500-2025-05/math500-2025-05-45", "result": "BAD", "response": "200", "expected_response": "154", "delay": "46", "tokens": "927", "model": "Llama33"}

@@ -1,2 +1,3 @@
-{"date": "2025-07-22T23:46:10.205108+00:00", "problem": "./AIME2025-1/aime2025-1-8", "result": "GOOD", "response": "77", "expected_response": "77", "delay": "119", "tokens": "6473", "model": "Qwen3-MoE-R"}
-{"date": "2025-07-23T01:03:17.052389+00:00", "problem": "./AIME2025-1/aime2025-1-8", "result": "GOOD", "response": "77", "expected_response": "77", "delay": "132", "tokens": "7170", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T15:10:47.873830+00:00", "problem": "./AIME2025-1/aime2025-1-8", "result": "GOOD", "response": "77", "expected_response": "77", "delay": "109", "tokens": "5901", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T19:33:59.768519+00:00", "problem": "./AIME2025-1/aime2025-1-8", "result": "GOOD", "response": "77", "expected_response": "77", "delay": "118", "tokens": "6402", "model": "Qwen3-MoE-R"}
+{"date": "2025-07-23T22:58:48.662261+00:00", "problem": "./AIME2025-1/aime2025-1-8", "result": "GOOD", "response": "77", "expected_response": "77", "delay": "98", "tokens": "5291", "model": "Qwen3-MoE-R"}

@@ -1,0 +1,3 @@
+{"date": "2025-07-24T17:38:57.436879+00:00", "problem": "./AIME2025-2/aime2025-2-11", "result": "BAD", "response": "11", "expected_response": "113", "delay": "51", "tokens": "1147", "model": "SakanaRTL"}
+{"date": "2025-07-24T19:49:19.207434+00:00", "problem": "./AIME2025-2/aime2025-2-11", "result": "BAD", "response": "2", "expected_response": "113", "delay": "44", "tokens": "991", "model": "SakanaRTL"}
+{"date": "2025-07-24T21:53:20.551902+00:00", "problem": "./AIME2025-2/aime2025-2-11", "result": "BAD", "response": "6", "expected_response": "113", "delay": "47", "tokens": "1057", "model": "SakanaRTL"}

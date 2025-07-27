@@ -11,14 +11,16 @@ log_context=""
 #models
 models = {
 "QwQ32-GGUF": {"model_name":"QwQ32-GGUF","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/QwQ32/","model_key":"token-abc123","reasoning_model":True},
-"QwQ32": {"model_name":"QwQ32","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/QwQ32/","model_key":"token-abc123","reasoning_model":True},
-"SakanaRTL":{"model_name":"SakanaRTL","model_url":"http://172.31.16.19:8003/v1","model_path":"/llm/SakanaAI-RTL-32","model_key":"token-abc123","reasoning_model":True},
-"Qwen3-32R":{"model_name":"Qwen3-32R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True},
-"Qwen3-MoE-R":{"model_name":"Qwen3-MoE-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True},
-"Qwen3-MoE-NR":{"model_name":"Qwen3-MoE-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
-"Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
-"Llama33":{"model_name":"Llama33","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Llama33-70/","model_key":"token-abc123","reasoning_model":False},
-"Deepseek":{"model_name":"Deepseek","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Deepseek-R1/","model_key":"token-abc123","reasoning_model":True},
+"QwQ32": {"model_name":"QwQ32","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/QwQ32/","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":40,"top_p":0.95,"repetition_penalty":1.0}},
+"SakanaRTL":{"model_name":"SakanaRTL","model_url":"http://172.31.16.19:8003/v1","model_path":"/llm/SakanaAI-RTL-32","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.05}},
+"Qwen3-32R":{"model_name":"Qwen3-32R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-14R":{"model_name":"Qwen3-14R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-14B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-MoE-R":{"model_name":"Qwen3-MoE-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-MoE-NR":{"model_name":"Qwen3-MoE-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+#"Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
+"Llama33":{"model_name":"Llama33","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Llama33-70/","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.9,"repetition_penalty":1.0}},
+"Deepseek":{"model_name":"Deepseek","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Deepseek-R1/","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 }
 
 def extractDict(s:str):
@@ -40,14 +42,19 @@ def extractDict(s:str):
 
 
 def call_model(l_model:str,l_prompt:list,l_streaming:bool):
+    ###Achtung:
+    #This is official recommendation
+    #For thinking mode (enable_thinking=True), use Temperature=0.6, TopP=0.95, TopK=20, and MinP=0. DO NOT use greedy decoding, as it can lead to performance degradation and endless repetitions.
+    #For non-thinking mode (enable_thinking=False), we suggest using Temperature=0.7, TopP=0.8, TopK=20, and MinP=0.
 
     client = OpenAI(
         base_url=models[l_model]["model_url"],
         api_key=models[l_model]["model_key"],timeout=3000
     )
+    #"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.05}
     completion = client.chat.completions.create(
     model=models[l_model]["model_path"],
-    messages=l_prompt,temperature=0.01,stream=l_streaming,extra_body={"chat_template_kwargs": {"enable_thinking": models[l_model]["reasoning_model"]}})
+    messages=l_prompt,temperature=models[l_model]["model_params"]["temperature"],stream=l_streaming,extra_body={"top_k": models[l_model]["model_params"]["top_k"],"top_p":models[l_model]["model_params"]["top_p"],"repetition_penalty":models[l_model]["model_params"]["repetition_penalty"],"chat_template_kwargs": {"enable_thinking": models[l_model]["reasoning_model"]}})
     #print(str(completion.choices[0]))
     #print(completion.choices[0].message.reasoning_content)
     #return completion.choices[0].message.reasoning_content
@@ -93,10 +100,19 @@ DO NOT PUT ANYTHING ELSE IN THE RESPONSE AS THE JSON DICTIONARY WILL BE PARSED
 """
     messagechk=[{"role":"user","content":msgtochk+l_llm_solution}]
     time.sleep(15)
-    llmasajudge,toktok=call_model("Qwen3-MoE-NR",messagechk,False)
-    llmasajudge=llmasajudge.choices[0].message.reasoning_content
-    logging.info(log_context+"llmasajudge:"+llmasajudge)
-    soluce = str(json.loads(extractDict(llmasajudge))["response"])
+    llmasajudgeM,toktok=call_model("Qwen3-32NR",messagechk,False)
+    llmasajudge=llmasajudgeM.choices[0].message.reasoning_content
+    if llmasajudge==None:
+        llmasajudge=llmasajudgeM.choices[0].message.content
+    logging.info(log_context+"llmasajudge:"+str(llmasajudge))
+    try:
+        jsondict=json.loads(extractDict(llmasajudge))
+    except:
+        jsondict={}
+    if isinstance(jsondict, dict):
+        soluce = str(jsondict.get("response","?"))
+    else:
+        soluce = "?"
     return soluce
 
 def resolve_problem(l_model:str,l_problem:str):
@@ -166,38 +182,58 @@ def resolve_problem(l_model:str,l_problem:str):
     #return isgoodsoluce,soluce,expected_solution,end,tokens
 
 log_context = "-- "+test_model+" -- "
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-0");
-#resolve_problem(test_model,"cyril2025-1-1");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-1");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-3");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-4");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-5");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-6");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-7");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-8");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-9");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-12");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-13");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-14");
-#resolve_problem(test_model,"./AIME2025-1/aime2025-1-15");
 
 
-#MATH500 05-2025
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-5");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-6");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-15");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-16");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-17");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-20");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-21");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-25");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-27");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-37");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-40");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-43");
-resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-45");
+def AIME_2025_1():
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-0");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-1");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-3");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-4");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-5");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-6");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-7");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-8");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-9");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-12");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-13");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-14");
+    resolve_problem(test_model,"./AIME2025-1/aime2025-1-15");
+
+def AIME_2025_2():
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-1");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-2");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-4");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-7");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-8");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-9");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-10");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-11");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-12");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-13");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-14");
+    resolve_problem(test_model,"./AIME2025-2/aime2025-2-15");
+
+def MATH500_2025_05():
+
+    #MATH500 05-2025
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-5");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-6");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-15");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-16");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-17");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-20");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-21");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-25");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-27");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-37");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-40");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-43");
+    resolve_problem(test_model,"./MATH500-2025-05/math500-2025-05-45");
 
 
 #time.sleep(15)
 
+MATH500_2025_05()
+AIME_2025_1()
+AIME_2025_2()
 

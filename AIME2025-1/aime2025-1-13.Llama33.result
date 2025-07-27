@@ -1,0 +1,3 @@
+{"date": "2025-07-26T22:56:09.510148+00:00", "problem": "./AIME2025-1/aime2025-1-13", "result": "BAD", "response": "654", "expected_response": "204", "delay": "33", "tokens": "671", "model": "Llama33"}
+{"date": "2025-07-27T00:14:58.071632+00:00", "problem": "./AIME2025-1/aime2025-1-13", "result": "BAD", "response": "379", "expected_response": "204", "delay": "29", "tokens": "572", "model": "Llama33"}
+{"date": "2025-07-27T01:06:37.260919+00:00", "problem": "./AIME2025-1/aime2025-1-13", "result": "BAD", "response": "354", "expected_response": "204", "delay": "46", "tokens": "927", "model": "Llama33"}

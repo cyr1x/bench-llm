@@ -1,0 +1,6 @@
+Let $A_1A_2\dots A_{11}$ be an $11$-sided non-convex simple polygon with the following properties:
+• For every integer $2 \leq i \leq 10$, the area of $A_iA_1A_{i+1}$ is $1$,
+• For every integer $2 \leq i \leq 10$, $\cos(\angle A_iA_1A_{i+1})=\frac{12}{13}$,
+• The perimeter of the $11$-gon $A_1A_2\dots A_{11}$ is equal to $20$.
+Then $A_1A_2+A_1A_{11}$ can be expressed as $\frac{m\sqrt{n}-p}{q}$ where $m,n,p,q$ are positive integers, $n$ is not divisible by any square, and no prime divides all of $m$,$p$, and $q$. 
+Find $m+n+p+q$.

@@ -1,1 +1,2 @@
-{"date":"2025-07-22T03:10:41.019503+00:00","problem":"math500-2025-05-45","result":"BAD","response":"1","expected_response":"154","delay":"1806","tokens":"34895","model":"Deepseek"}
+{"date": "2025-07-24T03:41:57.550088+00:00", "problem": "./MATH500-2025-05/math500-2025-05-45", "result": "BAD", "response": "1813", "expected_response": "154", "delay": "526", "tokens": "10404", "model": "Deepseek"}
+{"date": "2025-07-24T11:29:07.694190+00:00", "problem": "./MATH500-2025-05/math500-2025-05-45", "result": "BAD", "response": "1", "expected_response": "154", "delay": "1814", "tokens": "34895", "model": "Deepseek"}

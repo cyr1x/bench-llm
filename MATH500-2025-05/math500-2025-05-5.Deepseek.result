@@ -1,2 +1,4 @@
-{"date":"2025-07-21T22:28:25.031150+00:00","problem":"math500-2025-05-5","result":"GOOD","response":"8","expected_response":"8","delay":"130","tokens":"2597","model":"Deepseek"}
-{"date":"2025-07-21T23:52:12.883910+00:00","problem":"math500-2025-05-5","result":"GOOD","response":"8","expected_response":"8","delay":"227","tokens":"4539","model":"Deepseek"}
+{"date": "2025-07-24T01:12:37.515528+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "81", "tokens": "1603", "model": "Deepseek"}
+{"date": "2025-07-24T01:25:43.987187+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "314", "tokens": "6239", "model": "Deepseek"}
+{"date": "2025-07-24T07:46:44.619645+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "BAD", "response": "5", "expected_response": "8", "delay": "366", "tokens": "7250", "model": "Deepseek"}
+{"date": "2025-07-24T08:57:03.412179+00:00", "problem": "./MATH500-2025-05/math500-2025-05-5", "result": "GOOD", "response": "8", "expected_response": "8", "delay": "383", "tokens": "7603", "model": "Deepseek"}
