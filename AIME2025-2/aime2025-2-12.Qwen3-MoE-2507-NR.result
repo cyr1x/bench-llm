@@ -1,0 +1,3 @@
+{"date": "2025-07-28T23:14:12.410610+00:00", "problem": "./AIME2025-2/aime2025-2-12", "result": "GOOD", "response": "19", "expected_response": "19", "delay": "130", "tokens": "7066", "model": "Qwen3-MoE-2507-NR"}
+{"date": "2025-07-29T00:54:15.085687+00:00", "problem": "./AIME2025-2/aime2025-2-12", "result": "GOOD", "response": "19", "expected_response": "19", "delay": "81", "tokens": "4384", "model": "Qwen3-MoE-2507-NR"}
+{"date": "2025-07-29T02:29:56.210318+00:00", "problem": "./AIME2025-2/aime2025-2-12", "result": "GOOD", "response": "19", "expected_response": "19", "delay": "77", "tokens": "4187", "model": "Qwen3-MoE-2507-NR"}

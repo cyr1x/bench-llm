@@ -1,0 +1,3 @@
+{"date": "2025-07-27T16:27:12.709504+00:00", "problem": "./AIME2025-2/aime2025-2-15", "result": "BAD", "response": "188", "expected_response": "240", "delay": "422", "tokens": "26599", "model": "Qwen3-14R"}
+{"date": "2025-07-27T19:23:48.933007+00:00", "problem": "./AIME2025-2/aime2025-2-15", "result": "BAD", "response": "111", "expected_response": "240", "delay": "568", "tokens": "34898", "model": "Qwen3-14R"}
+{"date": "2025-07-27T22:25:21.350795+00:00", "problem": "./AIME2025-2/aime2025-2-15", "result": "BAD", "response": "312", "expected_response": "240", "delay": "404", "tokens": "25544", "model": "Qwen3-14R"}

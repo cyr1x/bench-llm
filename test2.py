@@ -15,7 +15,11 @@ models = {
 "SakanaRTL":{"model_name":"SakanaRTL","model_url":"http://172.31.16.19:8003/v1","model_path":"/llm/SakanaAI-RTL-32","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.05}},
 "Qwen3-32R":{"model_name":"Qwen3-32R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-14R":{"model_name":"Qwen3-14R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-14B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-8R":{"model_name":"Qwen3-8R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-8B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-4R":{"model_name":"Qwen3-4R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-4B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-MoE-R":{"model_name":"Qwen3-MoE-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-MoE-2507-R":{"model_name":"Qwen3-MoE-2507-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.0}},
+"Qwen3-MoE-2507-NR":{"model_name":"Qwen3-MoE-2507-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.0}},
 "Qwen3-MoE-NR":{"model_name":"Qwen3-MoE-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 #"Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
@@ -95,12 +99,13 @@ you must format the response detailed below as a json dictionary like this:
 
 {"response":"<the response number>"}
 
+where <the response number> must be replaced by the final response given by the text below.
 DO NOT PUT ANYTHING ELSE IN THE RESPONSE AS THE JSON DICTIONARY WILL BE PARSED
 
 """
     messagechk=[{"role":"user","content":msgtochk+l_llm_solution}]
     time.sleep(15)
-    llmasajudgeM,toktok=call_model("Qwen3-32NR",messagechk,False)
+    llmasajudgeM,toktok=call_model("Qwen3-MoE-2507-NR",messagechk,False)
     llmasajudge=llmasajudgeM.choices[0].message.reasoning_content
     if llmasajudge==None:
         llmasajudge=llmasajudgeM.choices[0].message.content
