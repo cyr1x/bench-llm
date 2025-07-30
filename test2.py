@@ -17,14 +17,15 @@ models = {
 "Qwen3-14R":{"model_name":"Qwen3-14R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-14B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-8R":{"model_name":"Qwen3-8R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-8B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-4R":{"model_name":"Qwen3-4R","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Qwen3-4B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
-"Qwen3-MoE-R":{"model_name":"Qwen3-MoE-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
-"Qwen3-MoE-2507-R":{"model_name":"Qwen3-MoE-2507-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.0}},
-"Qwen3-MoE-2507-NR":{"model_name":"Qwen3-MoE-2507-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.7,"top_k":20,"top_p":0.8,"repetition_penalty":1.0}},
+"Qwen3-MoE-R":{"model_name":"Qwen3-MoE-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.15,"top_k":20,"top_p":0.95,"repetition_penalty":1.1}},
+"Qwen3-MoE-Think-2507-R":{"model_name":"Qwen3-MoE-Think-2507-R","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Qwen3-MoE-Think-2507-NR":{"model_name":"Qwen3-MoE-Think-2507-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-MoE-NR":{"model_name":"Qwen3-MoE-NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 "Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 #"Qwen3-32NR":{"model_name":"Qwen3-32NR","model_url":"http://172.31.16.19:8001/v1","model_path":"/llm/Qwen3-32B","model_key":"token-abc123","reasoning_model":False},
 "Llama33":{"model_name":"Llama33","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Llama33-70/","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.9,"repetition_penalty":1.0}},
 "Deepseek":{"model_name":"Deepseek","model_url":"http://172.31.16.19:8000/v1","model_path":"/llm/Deepseek-R1/","model_key":"token-abc123","reasoning_model":True,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
+"Voxtral":{"model_name":"Voxtral","model_url":"http://172.31.16.22:8000/v1","model_path":"mistralai/Voxtral-Mini-3B-2507","model_key":"token-abc123","reasoning_model":False,"model_params":{"temperature":0.6,"top_k":20,"top_p":0.95,"repetition_penalty":1.0}},
 }
 
 def extractDict(s:str):
@@ -59,6 +60,7 @@ def call_model(l_model:str,l_prompt:list,l_streaming:bool):
     completion = client.chat.completions.create(
     model=models[l_model]["model_path"],
     messages=l_prompt,temperature=models[l_model]["model_params"]["temperature"],stream=l_streaming,extra_body={"top_k": models[l_model]["model_params"]["top_k"],"top_p":models[l_model]["model_params"]["top_p"],"repetition_penalty":models[l_model]["model_params"]["repetition_penalty"],"chat_template_kwargs": {"enable_thinking": models[l_model]["reasoning_model"]}})
+    logging.info(log_context+"model="+str(models[l_model]["model_path"])+" messages="+str(l_prompt)+" temperature="+str(models[l_model]["model_params"]["temperature"])+" stream="+str(l_streaming)+" extra_body="+str({"top_k": models[l_model]["model_params"]["top_k"],"top_p":models[l_model]["model_params"]["top_p"],"repetition_penalty":models[l_model]["model_params"]["repetition_penalty"],"chat_template_kwargs": {"enable_thinking": models[l_model]["reasoning_model"]}}))
     #print(str(completion.choices[0]))
     #print(completion.choices[0].message.reasoning_content)
     #return completion.choices[0].message.reasoning_content
@@ -105,7 +107,7 @@ DO NOT PUT ANYTHING ELSE IN THE RESPONSE AS THE JSON DICTIONARY WILL BE PARSED
 """
     messagechk=[{"role":"user","content":msgtochk+l_llm_solution}]
     time.sleep(15)
-    llmasajudgeM,toktok=call_model("Qwen3-MoE-2507-NR",messagechk,False)
+    llmasajudgeM,toktok=call_model("Voxtral",messagechk,False)
     llmasajudge=llmasajudgeM.choices[0].message.reasoning_content
     if llmasajudge==None:
         llmasajudge=llmasajudgeM.choices[0].message.content
@@ -181,6 +183,7 @@ def resolve_problem(l_model:str,l_problem:str):
         bob["delay"]=str(delay)
         bob["tokens"]=str(tokens)
         bob["model"]=str(l_model)
+        bob["model_params"]=models[l_model]["model_params"]
         fres.write(json.dumps(bob)+"\n")
         #fres.write("\n{'date':'"+datetime.datetime.now(datetime.timezone.utc).astimezone().isoformat()+"','problem':'"+l_problem+"','result':'"+isgoodsoluce+"','response':'"+str(soluce)+"','expected_response':'"+str(expected_solution)+"','delay':'"+str(delay)+"','tokens':'"+str(tokens)+"','model':'"+l_model+"'}")
 
@@ -238,7 +241,8 @@ def MATH500_2025_05():
 
 #time.sleep(15)
 
-MATH500_2025_05()
-AIME_2025_1()
-AIME_2025_2()
+
+#MATH500_2025_05()
+#AIME_2025_1()
+#AIME_2025_2()
 
